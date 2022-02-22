@@ -1,0 +1,22 @@
+.banner
+    .banner__swiper.swiper
+        .swiper-wrapper
+            each i in [1,2,3]
+                a(href="#").swiper-slide.banner__slide
+                    picture
+                        source(srcset="images/content/banner/img-m.jpg" media='(max-width: 767.98px)')
+                        source(srcset="images/content/banner/img.jpg" media='(max-width: 1279.98px)')
+                        source(srcset="images/content/banner/img.jpg" media='(max-width: 1919.98px)')
+                        img(src="images/content/banner/img.jpg" alt='')
+
+    .banner__nav
+        .container
+            a(href="#").banner__arr.banner__prev
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.2539 14.0022L4.74627 7.72718L11.2539 2.0022" stroke="white" stroke-linecap="round"/>
+                </svg>
+            a(href="#").banner__arr.banner__next
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.74615 2.0022L11.2538 8.27722L4.74615 14.0022" stroke="white" stroke-linecap="round"/>
+                </svg>
+

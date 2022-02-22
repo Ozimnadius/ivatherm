@@ -1,0 +1,47 @@
+.header-cabinet{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  &__item{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    @include tr;
+
+    &:hover{
+      color: var(--primary-light);
+    }
+
+    svg{
+      path{
+        fill: currentColor;
+      }
+    }
+
+    &--enter{
+      padding-right: 25px;
+    }
+
+    &-count{
+      width: 18px;
+      height: 18px;
+      border-radius: 50px;
+      background-color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

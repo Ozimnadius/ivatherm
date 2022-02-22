@@ -1,0 +1,32 @@
+.slider{
+  position: relative;
+
+  &__slide{
+    height: auto;
+  }
+
+  &__nav{
+    position: absolute;
+    z-index: 100;
+    bottom: calc(100% + 30px);
+    right: 0;
+    display: flex;
+    gap: 30px;
+  }
+
+  &__arr{
+    cursor: pointer;
+
+    svg{
+      fill: var(--primary)
+    }
+
+    &.swiper-button-disabled{
+      pointer-events: none;
+      opacity: .5;
+      svg{
+        fill: #c5cdd7;
+      }
+    }
+  }
+}

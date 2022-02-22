@@ -1,0 +1,40 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__stars {
+    display: flex;
+    gap: 2px;
+    color: var(--primary);
+
+    @for $i from 1 through 5 {
+      &--#{$i} {
+        .rating__star {
+          @for $j from 1 through $i{
+            &:nth-child(#{$j}) {
+              svg {
+                fill: currentColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__star {
+    svg {
+      stroke: currentColor;
+      fill: var(--white)
+    }
+  }
+
+  &__count{
+    font-size: 14px;
+
+    &--empty{
+      color: #84849a;
+    }
+  }
+}

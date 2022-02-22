@@ -1,0 +1,139 @@
+.drop-menu{
+
+  &:hover{
+
+    .drop-menu__drop{
+      display:grid;
+    }
+  }
+
+  &__btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+
+
+  }
+
+  &__drop{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-height: 440px;
+    box-shadow: 0 8px 16px rgba(39, 40, 51, 0.16);
+    border: 8px solid var(--white);
+    background-color: #f8f8f8;
+    background-image: url(/images/content/drop-menu/pattern.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    grid-template-columns: 350px 1fr;
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      height: 30px;
+    }
+  }
+
+  &__list{
+    padding: 40px 30px 40px 40px;
+  }
+
+  &__item{
+    &:hover{
+
+
+      .drop-menu{
+
+        &__link{
+          color: var(--primary-light);
+
+          svg{
+            fill: var(--primary-light);
+            opacity: 1;
+          }
+        }
+
+        &__content{
+        display: block;
+      }}
+    }
+  }
+
+  &__link{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    svg{
+      opacity: 0;
+    }
+  }
+
+  &__content{
+    display: none;
+    position: absolute;
+    left: 350px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 40px;
+    padding-left: 0;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;
+      width: 50px;
+    }
+
+  }
+
+  &__grid{
+    display:grid;
+    grid-template-columns: 520fr 464fr;
+    grid-gap: 20px;
+  }
+
+  &__left{
+
+  }
+
+  &__txt{
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 400;
+    border-left: 16px solid var(--white);
+    padding-left: 20px;
+  }
+
+  &__right{
+    img{
+      display: block;
+    }
+  }
+
+
+}

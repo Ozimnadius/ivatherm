@@ -1,0 +1,18 @@
+.nav{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+
+  &__item{
+    color: var(--black);
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 14px 0;
+    pointer-events: all;
+    @include tr;
+
+    &:hover{
+      color: var(--primary-light);
+    }
+  }
+}

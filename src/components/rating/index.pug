@@ -1,0 +1,11 @@
+.rating
+    div(class='rating__stars--'+rating.stars).rating__stars
+        each i in [1,2,3,4,5]
+            .rating__star
+                <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.28461 5.06531L6.95222 1.50624L8.62298 5.06562L8.73878 5.31233L9.00888 5.34869L12.8667 5.8681L10.0387 8.60459L9.84663 8.7904L9.8944 9.05329L10.602 12.9483L7.19457 11.0664L6.95282 10.9328L6.71107 11.0664L3.30442 12.9483L4.01131 9.0532L4.059 8.7904L3.86708 8.60464L1.03969 5.86804L4.89854 5.3487L5.16887 5.31231L5.28461 5.06531Z"/>
+                </svg>
+    if rating.count
+        .rating__count= rating.count
+    else
+        .rating__count.rating__count--empty (Пока нет отзыва)

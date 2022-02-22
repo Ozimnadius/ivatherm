@@ -1,260 +1,78 @@
-.btn {
+.btn{
+  width: 280px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $bg;
-  width: 333px;
-  max-width: 100%;
-  height: 58px;
-  color: $bg;
-  font-family: Roboto;
-  font-weight: 300;
+
+  font-size: 16px;
+  text-align: center;
+  color: var(--black);
+
+  border: 1px solid var(--white);
+  background-color: var(--white);
+  position: relative;
+
   @include tr;
 
-  &:hover {
-    background: $bg;
-    color: $txt;
-    @include lg-block{
-      background: transparent;
-      color: $bg;
-    }
+  &:hover{
+    border-color: var(--primary-light);
+    background-color: var(--grey);
+  }
 
-    svg {
-      transform: translateX(10px);
-      @include lg-block{
-          transform: none;
+  &--arr{
+    gap: 20px;
+    svg{
+      path{
+        fill: currentColor;
       }
     }
   }
 
-  &--black {
-    color: $txt;
-    border-color: $txt;
-
-    &:hover {
-      background: $txt;
-      color: $bg;
-      @include lg-block{
-        color: $txt;
-        background: transparent;
-      }
-    }
-
-  }
-
-  &--gold {
-    border-color: $gold;
-    color: $txt;
-
-    &:hover {
-      background: $txt;
-      border-color: $txt;
-      color: $bg;
-    }
-  }
-
-  &--revers {
-    svg {
-      margin-right: 15px;
-      margin-left: 0 !important;
-    }
-
-    &:hover {
-      svg {
-        transform: translateX(-10px);
-      }
-    }
-  }
-
-  &--hover-black {
-    &:hover {
-      border-color: $txt;
-      background-color: $txt;
-      color: $bg;
-    }
-  }
-
-  svg {
-    fill: currentColor;
-    margin-left: 15px;
-    transition: transform 0.3s;
-  }
-
-
-}
-
-.btn2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid $bg;
-  background: $bg;
-  width: 333px;
-  max-width: 100%;
-  height: 58px;
-  color: $txt;
-  font-family: Roboto;
-  font-weight: 300;
-  @include tr;
-
-  &:hover {
-    background: transparent;
-    color: $txt;
+  &--icon{
 
     svg{
-      fill: $txt;
-    }
-  }
-
-  svg {
-    fill: $txt;
-    margin-left: 15px;
-    @include tr;
-  }
-
-  &--black {
-    background: $txt;
-    color: $bg;
-    border-color: $txt;
-
-    svg{
-      fill: $bg;
-    }
-
-    &:hover {
-      background: transparent;
-      color: $txt;
-
-      svg{
-        fill: $txt;
-      }
-    }
-
-  }
-
-
-}
-
-.title {
-  color: $txt;
-  font-size: 32px;
-  font-weight: 500;
-  text-transform: uppercase;
-  @include sm-block{
-    font-size: 20px;
-  }
-
-
-  &--line {
-    padding-top: 30px;
-    position: relative;
-    @include sm-block{
-      padding-top: 20px;
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      width: 64px;
-      height: 8px;
-      background-color: $gold;
       position: absolute;
-      top: 0;
-      left: 0;
-      @include sm-block{
-        height: 4px;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      path{
+        fill: currentColor;
       }
     }
   }
-}
 
-.mb {
-  &0 {
-    margin-bottom: 0 !important;
-  }
+  &--grey{
+    border: 2px solid var(--grey);
+    background-color: var(--grey);
 
-  &20 {
-    margin-bottom: 20px !important;
-  }
-
-  &40 {
-    margin-bottom: 40px !important;
-  }
-
-  &60 {
-    margin-bottom: 60px;
-  }
-
-  &80 {
-    margin-bottom: 80px !important;
-    @include xlg-block {
-      margin-bottom: 50px!important;
-    }
-    @include lg-block{
-      margin-bottom: 30px!important;
+    &:hover{
+      border-color: var(--primary-light);
+      background-color: var(--primary);
+      color: var(--white);
     }
   }
 
-  &120 {
-    margin-bottom: 120px !important;
-    @include xlg-block{
-      margin-bottom: 80px !important;
-    }
-    @include sm-block{
-      margin-bottom: 30px !important;
+  &--primary{
+    border-width: 2px;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+
+    &:hover{
+      border-color: var(--primary-light);
+      background-color: var(--primary);
+      opacity: .9;
     }
   }
 
 }
 
-//Form elements
-.input {
-  display: block;
-  width: 100%;
-  height: 74px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: $bg;
-  color: $txt;
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: 300;
-  padding: 0 30px;
-  border: 1px solid transparent;
-  resize: none;
-  @include tr;
-
-  @include lg-block{
-    height: 60px;
-    padding: 0 25px;
-  }
-  @include sm-block{
-    font-size: 16px;
-    height: 51px;
-  }
-
-  &--area {
-    height: 123px;
-    padding-top: 20px;
-  }
-
-  &:focus {
-    border-color: $link;
-  }
-
-  &.error {
-    border-color: red;
-
-    &::placeholder {
-      color: red;
-    }
-  }
-
-}
-
-.file {
-
-}
-
-.ovh{
-  overflow: hidden;
+.title{
+  color: var(--primary);
+  font-size: 32px;
+  font-weight: 400;
+  background: linear-gradient(90deg, #F9F9F9 0%, rgba(249, 249, 249, 0.15) 23.96%, rgba(248, 248, 248, 0) 100%);
+  padding: 15px 45px;
+  border-left: 3px solid var(--primary);
 }

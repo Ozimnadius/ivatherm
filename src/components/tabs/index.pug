@@ -1,0 +1,9 @@
+div(data-tabs='tabs').tabs
+    .tabs__btns
+        each btn in tabs
+            button(type='button' data-tabs='btn').tabs__btn= btn
+    .tabs__tabs
+        each tab in tabs
+            div(data-tabs='tab').tabs__tab
+                .tabs__slider
+                    include ../slider/index

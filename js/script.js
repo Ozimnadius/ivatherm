@@ -1,5 +1,7 @@
 //USER
 
+//COMPONENTS
+
 
 // common.js
 const jsTools = {
@@ -43,4 +45,31 @@ window.addEventListener("load", function () {
 
 });
 
+const swiperBanner = new Swiper('.banner__swiper', {
+    loop: true,
+    navigation: {
+        nextEl: '.banner__next',
+        prevEl: '.banner__prev',
+    },
+    autoplay: {
+        delay: 5000,
+    },
+});
+new OzimnadTabs('.tabs');
+let sliders = document.querySelectorAll('.slider');
+
+
+sliders.forEach(function (slider){
+    new Swiper(slider.querySelector('.slider__swiper'), {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        // autoplay: {
+        //     delay: 1000,
+        // },
+        navigation: {
+            nextEl: slider.querySelector('.slider__next'),
+            prevEl: slider.querySelector('.slider__prev'),
+        },
+    });
+});
 //# sourceMappingURL=script.js.map
