@@ -15,7 +15,7 @@
     "jquery": "^3.6.0",
     "jquery-validation": "^1.19.3",
     "normalize.css": "^8.0.1",
-    "ozimnad-tabs": "^1.1.5",
+    "ozimnad-tabs": "^1.1.7",
     "smart-grid": "^2.1.2",
     "swiper": "^8.0.6"
   }

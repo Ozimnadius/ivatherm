@@ -14,6 +14,7 @@
 
   &.sun{
     .item{
+
       &__label{
         &:nth-child(1){
           border-color: var(--orange);
@@ -28,11 +29,17 @@
       &__icon{
         background-color: var(--orange);
       }
+
+      &__price{
+        color: #ea0429;
+
+      }
     }
 
     .rating__stars{
       color: var(--orange);
     }
+
   }
 
   &__top {
@@ -197,7 +204,7 @@
 
     &--old{
       font-size: 16px;
-      color: var(--black);
+      color: var(--black)!important;
 
       &:before{
         content: '';

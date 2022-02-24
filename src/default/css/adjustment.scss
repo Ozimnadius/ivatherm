@@ -37,6 +37,10 @@ body {
   &__content{
     flex-grow: 1;
   }
+
+  &__footer{
+    overflow: hidden;
+  }
 }
 
 
@@ -95,4 +99,5 @@ input, textarea {
   background: none;
   outline: none;
   font: inherit;
+  color: inherit;
 }

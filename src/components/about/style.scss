@@ -48,13 +48,7 @@
   }
 
   &__name{
-    color: var(--primary);
-    font-size: 32px;
     text-transform: uppercase;
-    padding: 15px 30px 15px 40px;
-    border-left: 3px solid var(--primary);
-    background: linear-gradient(90deg, #F9F9F9 0%, rgba(249, 249, 249, 0.15) 23.96%, rgba(248, 248, 248, 0) 100%);
-
     position: absolute;
     z-index: 2;
     bottom: 24px;

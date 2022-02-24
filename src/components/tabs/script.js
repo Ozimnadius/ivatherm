@@ -1,1 +1,5 @@
-new OzimnadTabs('.tabs');
+if (document.querySelector('.tabs')) {
+    new OzimnadTabs({
+        selector: '.tabs'
+    });
+}

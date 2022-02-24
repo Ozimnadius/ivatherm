@@ -1,0 +1,25 @@
+.breadcrumbs {
+  padding-top: 45px;
+  padding-bottom: 25px;
+
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+
+  &__item{
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 400;
+
+    &--active{
+      color: var(--black);
+      font-weight: 500;
+    }
+  }
+
+  &__sep{
+    svg{
+      fill: var(--primary);
+    }
+  }
+}
