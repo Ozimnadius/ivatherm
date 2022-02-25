@@ -1,0 +1,12 @@
+label(data-hidden=i.hidden).checkbox
+    input(type='checkbox' name=name + '[' + x + ']' value=i.title)
+    span.checkbox__fake
+        span.checkbox__check
+            <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7309 1.51281L5.23907 7.75069C5.06718 7.91535 4.83427 8.00781 4.59145 8.00781C4.34863 8.00781 4.11577 7.91535 3.94389 7.75069L0.228431 4.17743C0.0744763 4.00927 -0.00702191 3.79115 0.000474881 3.56738C0.00797167 3.34362 0.103913 3.13099 0.268805 2.97268C0.433697 2.81437 0.655173 2.72226 0.888245 2.71507C1.12132 2.70787 1.34852 2.78614 1.52367 2.93395L4.59054 5.87922L10.4329 0.265779C10.6051 0.100529 10.8387 0.00772927 11.0822 0.00781256C11.3257 0.00789584 11.5592 0.100845 11.7313 0.266213C11.9035 0.431581 12.0001 0.655812 12 0.889594C11.9999 1.12338 11.9031 1.34756 11.7309 1.51281V1.51281Z" fill="white"/>
+            </svg>
+        span.checkbox__right
+            span.checkbox__title= i.title
+            if i.count
+                span.checkbox__count.
+                    &nbsp;(#{i.count})

@@ -41,7 +41,8 @@ const media = {
 
 window.addEventListener("load", function () {
 
-    $('.input[type="tel"]').inputmask("+7(999)999-99-99");
+    let mask = new Inputmask("+7(999)999-99-99");
+    mask.mask('.input[type="tel"]');
 
 });
 
@@ -90,4 +91,59 @@ new Swiper('.news__swiper', {
         el: '.news__pag',
     },
 });
+new OzimnadAccordion({
+    selector: '.catalog-menu',
+    openAll: true
+});
+let filterBlocksAccordion = new OzimnadAccordion({
+    selector:'.filter__blocks',
+    openAll: true
+});
+
+$('.filter__btn').on('click', function (e){
+   $('.filter__blocks').slideToggle(300);
+
+   this.classList.toggle('active');
+});
+window.addEventListener('load', function () {
+
+    let ranges = document.querySelectorAll('.range');
+
+    ranges.forEach(function (i) {
+        let from = Number(i.dataset.from),
+            to = Number(i.dataset.to),
+            range = i.querySelector('.range__slider');
+
+        noUiSlider.create(range, {
+            start: [from, to],
+            connect: true,
+            step: 1,
+            range: {
+                'min': from,
+                'max': to
+            }
+        });
+
+        let inputs = i.querySelectorAll('.range__input');
+
+        range.noUiSlider.on('update', function (values, handle) {
+            inputs[handle].value = Math.round(values[handle]);
+        });
+
+        inputs.forEach((i, x) => {
+            i.addEventListener('change', function () {
+                range.noUiSlider.set(getValues(x, this.value));
+            });
+        });
+
+        function getValues(i, value) {
+            let arr = [null, null];
+            arr[i] = value;
+
+            return arr;
+        }
+
+    });
+});
+
 //# sourceMappingURL=script.js.map

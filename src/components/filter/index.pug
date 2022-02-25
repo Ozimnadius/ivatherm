@@ -1,0 +1,79 @@
+.filter
+    button(type='button').filter__btn.active
+        span.filter__btn-title
+            <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.9573 7.2848C17.0377 7.47893 17.0046 7.64465 16.858 7.78196L13.3617 11.2834V16.5533C13.3617 16.7521 13.2695 16.8918 13.0851 16.9723C13.0236 16.996 12.9645 17.0078 12.9078 17.0078C12.7801 17.0078 12.6737 16.9628 12.5886 16.8729L10.7731 15.0547C10.6833 14.9647 10.6383 14.8582 10.6383 14.7351V11.2834L7.14199 7.78196C6.99542 7.64465 6.96232 7.47893 7.0427 7.2848C7.12308 7.10014 7.26255 7.00781 7.46113 7.00781H16.5389C16.7374 7.00781 16.8769 7.10014 16.9573 7.2848Z"/>
+            </svg>
+            span Фильтр
+        span.filter__btn-arr
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 15.2598L12.275 8.75213L18 15.2598" stroke="black" stroke-linecap="round"/>
+            </svg>
+    .filter__blocks
+        .filter__block
+            div(data-accordion='item').filter-block
+                button(type='button' data-accordion='btn').filter-block__btn
+                    span Цена
+                    <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
+                    </svg>
+                div(data-accordion='collapse').filter-block__wrap
+                    div(data-accordion='content').filter-block__content
+                        -
+                            var range = {
+                                title: 'Цена',
+                                name: 'price',
+                                from: '2000',
+                                to: '15000'
+                            }
+                        include ../../components/range/index
+        .filter__block
+            div(data-accordion='item').filter-block
+                button(type='button' data-accordion='btn').filter-block__btn
+                    span По необходимости
+                    <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
+                    </svg>
+                div(data-accordion='collapse').filter-block__wrap
+                    div(data-accordion='content').filter-block__content
+                        -
+                            var arr = {
+                                name: 'needs',
+                                list: [
+                                    {
+                                        title: 'Жирная, склонная к акне кожа',
+                                        count: 4
+                                    },
+                                    {
+                                        title: 'Интенсивное увлажнение',
+                                    },
+                                    {
+                                        title: 'Покраснение + чешуйки',
+                                    },
+                                    {
+                                        title: 'Lorem1',
+                                        hidden: true
+                                    },
+                                    {
+                                        title: 'Lorem2',
+                                        hidden: true
+                                    },
+                                    {
+                                        title: 'Lorem3',
+                                        hidden: true
+                                    },
+                                    {
+                                        title: 'Lorem4',
+                                        hidden: true
+                                    },
+                                    {
+                                        title: 'Lorem5',
+                                        hidden: true
+                                    }
+                                ],
+                                more: true
+                            };
+                        include ../../components/checkboxes/index
+
+
+

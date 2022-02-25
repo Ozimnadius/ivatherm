@@ -1,0 +1,31 @@
+extends ../../main
+
+block variables
+    - var title = 'Уход за лицом'
+
+block content
+    .page
+        .page__breadcrumbs
+            .container
+                include ../../components/breadcrumbs/index
+        .page__catalog-banner
+            .container
+                include ../../components/catalog-banner/index
+        .container
+            .page__grid
+                aside.page__aside.aside
+                    .aside__menu
+                        include ../../components/catalog-menu/index
+                    .aside__filter
+                        include ../../components/filter/index
+
+                main.page__catalog
+                    include ../../components/catalog/index
+
+
+
+
+
+
+
+

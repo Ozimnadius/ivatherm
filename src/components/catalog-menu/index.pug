@@ -1,0 +1,46 @@
+div(data-accordion='accordion').catalog-menu
+    -
+        var arr = [
+            {
+                title: 'Face ',
+                list: [
+                    "Покраснение + чешуйки",
+                    "Термальная вода",
+                    "Сухая кожа",
+                    "Очень чувствительная, непереносимая кожа",
+                    "Жирная, склонная к акне кожа",
+                    "Поврежденная кожа",
+                    "Признаки старения",
+                    "Неровная кожа",
+                    "Покраснение + чувствительность",
+                    "Защита от солнца"
+                ]
+            },
+            {
+                title: 'Body',
+                list: [
+                    "Антицеллюлитный/Против растяжек",
+                    "Увлажняющее средство для тела",
+                    "Гигиена",
+                    "Очищающие средства",
+                    "Интенсивное увлажнение",
+                    "Защита от солнца",
+                    "Поврежденная кожа",
+                    "Ремонт кожи",
+                    "Защита от солнца",
+                    "Себорея/перхоть кожи головы"
+                ]
+            },
+
+        ];
+    each item in arr
+        div(data-accordion='item').catalog-menu__item
+            button(type='button' data-accordion='btn').catalog-menu__btn
+                span= item.title
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 15.2598L12.275 8.75213L18 15.2598" stroke="black" stroke-linecap="round"/>
+                </svg>
+            div(data-accordion='collapse').catalog-menu__wrap
+                div(data-accordion='content').catalog-menu__list
+                    each i in item.list
+                        a(href="#").catalog-menu__link= i

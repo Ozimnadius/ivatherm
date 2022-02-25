@@ -1,0 +1,29 @@
+.filter-block{
+  padding: 15px 8px;
+
+  &.active{
+    .filter-block__btn{
+      svg{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__btn{
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #f8f8f8;
+
+    svg{
+      fill: var(--black);
+      @include tr;
+    }
+  }
+
+  &__content{
+    padding-top: 24px;
+  }
+}

@@ -6,6 +6,9 @@
 @import "default/css/adjustment";
 @import "default/css/common";
 
+//PAGES
+@import "pages/style";
+
 //COMPONENTS
 @import "components/header/style";
 @import "components/lang/style";
@@ -27,14 +30,20 @@
 @import "components/breadcrumbs/style";
 @import "components/sections/style";
 @import "components/section/style";
+@import "components/catalog/style";
+@import "components/catalog-banner/style";
+@import "components/aside/style";
+@import "components/catalog-menu/style";
+@import "components/filter/style";
+@import "components/filter-block/style";
+@import "components/range/style";
+@import "components/checkboxes/style";
+@import "components/checkbox/style";
 
 
 
 
 @import "components/footer/style";
-
-//PAGES
-@import "pages/style";
 
 
 .debug {

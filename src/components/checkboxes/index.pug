@@ -1,0 +1,10 @@
+.checkboxes
+    .checkboxes__list
+        -
+            var name = arr.name
+        each i,x in arr.list
+           .checkboxes__item
+                include ../../components/checkbox/index
+    button(type='button').checkboxes__more
+        span Показать все
+        span Скрыть

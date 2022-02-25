@@ -1,0 +1,53 @@
+.catalog-menu {
+
+  &__item{
+    border-bottom: 1px solid var(--grey);
+
+    &.active{
+
+      .catalog-menu{
+        &__btn{
+          svg{
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    svg{
+      @include tr;
+    }
+  }
+
+  &__wrap{
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__list{
+    margin-top: -8px;
+    padding-bottom: 30px;
+  }
+
+  &__link{
+    display: block;
+    padding: 8px 0;
+    @include tr;
+
+    &:hover{
+      color: var(--primary);
+    }
+  }
+
+}

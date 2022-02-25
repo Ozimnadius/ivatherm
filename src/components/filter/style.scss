@@ -1,0 +1,39 @@
+.filter{
+
+  &__btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px;
+
+    &.active{
+      .filter__btn-arr svg{
+        transform: rotate(-180deg);
+      }
+    }
+
+    &-title{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        fill: var(--primary)
+      }
+    }
+
+    &-arr{
+      display: flex;
+      align-items: center;
+
+      svg{
+        @include tr;
+      }
+    }
+  }
+
+  &__blocks{
+    //display: none;
+  }
+}
