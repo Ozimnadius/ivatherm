@@ -1,14 +1,6 @@
 .filter-block{
   padding: 15px 8px;
 
-  &.active{
-    .filter-block__btn{
-      svg{
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
   &__btn{
     padding: 8px;
     display: flex;
@@ -16,14 +8,49 @@
     justify-content: space-between;
     width: 100%;
     background-color: #f8f8f8;
+    font-weight: 500;
+
+    &.active{
+      svg{
+        transform: rotate(-180deg);
+      }
+    }
 
     svg{
       fill: var(--black);
       @include tr;
     }
+
   }
 
   &__content{
     padding-top: 24px;
+  }
+
+  &__more{
+    color: #c5cdd7;
+    font-size: 14px;
+
+    &.open{
+      span{
+        &:first-child{
+          display: none;
+        }
+        &:last-child{
+          display: inline-block;
+        }
+      }
+    }
+
+    span{
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      &:first-child{
+        display: inline-block;
+      }
+      &:last-child{
+        display: none;
+      }
+    }
   }
 }

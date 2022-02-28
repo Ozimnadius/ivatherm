@@ -1,10 +1,11 @@
-.checkboxes
-    .checkboxes__list
+div(data-hide='parent').checkboxes
+    div(data-hide='list').checkboxes__list
         -
             var name = arr.name
         each i,x in arr.list
-           .checkboxes__item
+           div(data-hidden=i.hidden class=i.hidden?'hidden':'').checkboxes__item
                 include ../../components/checkbox/index
-    button(type='button').checkboxes__more
-        span Показать все
-        span Скрыть
+    if arr.more
+        button(type='button' data-hide='btn').checkboxes__more.filter-block__more
+            span Показать все
+            span Скрыть

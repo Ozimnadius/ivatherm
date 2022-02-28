@@ -1,4 +1,5 @@
 .filter{
+  position: relative;
 
   &__btn{
     display: flex;
@@ -33,7 +34,56 @@
     }
   }
 
-  &__blocks{
-    //display: none;
+  &__submit{
+    height: 52px;
+    box-shadow: 0 0 10px rgba(0, 82, 116, 0.1);
+    background-color: var(--white);
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: calc(100% + 8px);
+    opacity: 0;
+    pointer-events: none;
+
+    &:before{
+      content: '';
+      display: block;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 8px 8px 0;
+      border-color: transparent var(--white) transparent transparent;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin-top: -8px;
+
+    }
+
+    &-txt{
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    &-btn{
+      height: 100%;
+      background-color: var(--primary);
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+    }
+
+    &.active{
+      opacity: 1;
+      pointer-events: all;
+    }
   }
+
 }

@@ -1,1 +1,222 @@
 .catalog
+    .catalog__top
+        .catalog__sort
+            include ../../components/sort/index
+    .catalog__content
+        .catalog__list
+            -
+                var arr = [
+                    {
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--new',
+                                title: 'Новинка'
+                            },
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--new',
+                                title: 'Новинка'
+                            },
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                ];
+            each i in arr
+                .catalog__item
+                    include ../../components/item/index
+            .catalog__item.catalog__item--3
+                include ../../components/catalog-promo/index
+            -
+                var arr = [
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+
+
+                ];
+            each i in arr
+                .catalog__item
+                    include ../../components/item/index
+
+        button(type='button').catalog__more Показать еще
+        .catalog__bottom
+            select(name='count').catalog__count
+                option(value='10') 10 товаров
+                option(value='30') 30 товаров
+                option(value='50') 50 товаров
+            .catalog__shown Показано от 1 до 10 из 95 товаров.
+            .catalog__pag
+                include ../../components/pagination/index

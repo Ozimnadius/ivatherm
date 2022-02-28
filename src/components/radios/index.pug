@@ -1,0 +1,11 @@
+div(data-hide='parent').radios
+    div(data-hide='list').radios__list
+        -
+            var name = arr.name
+        each i,x in arr.list
+           div(data-hidden=i.hidden class=i.hidden?'hidden':'').radios__item
+                include ../../components/radio/index
+    if arr.more
+        button(type='button' data-hide='btn').radios__more.filter-block__more
+            span Показать все
+            span Скрыть

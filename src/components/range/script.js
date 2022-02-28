@@ -23,6 +23,10 @@ window.addEventListener('load', function () {
             inputs[handle].value = Math.round(values[handle]);
         });
 
+        range.noUiSlider.on('end', function (values, handle) {
+            $(inputs[handle]).trigger('change');
+        });
+
         inputs.forEach((i, x) => {
             i.addEventListener('change', function () {
                 range.noUiSlider.set(getValues(x, this.value));

@@ -1,4 +1,4 @@
-.filter
+form(action='#' method='get').filter
     button(type='button').filter__btn.active
         span.filter__btn-title
             <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
@@ -11,14 +11,13 @@
             </svg>
     .filter__blocks
         .filter__block
-            div(data-accordion='item').filter-block
-                button(type='button' data-accordion='btn').filter-block__btn
+            .filter-block
+                button(type='button').filter-block__btn
                     span Цена
                     <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
                     </svg>
-                div(data-accordion='collapse').filter-block__wrap
-                    div(data-accordion='content').filter-block__content
+                .filter-block__content
                         -
                             var range = {
                                 title: 'Цена',
@@ -28,14 +27,13 @@
                             }
                         include ../../components/range/index
         .filter__block
-            div(data-accordion='item').filter-block
-                button(type='button' data-accordion='btn').filter-block__btn
+            .filter-block
+                button(type='button').filter-block__btn
                     span По необходимости
                     <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
                     </svg>
-                div(data-accordion='collapse').filter-block__wrap
-                    div(data-accordion='content').filter-block__content
+                .filter-block__content
                         -
                             var arr = {
                                 name: 'needs',
@@ -74,6 +72,50 @@
                                 more: true
                             };
                         include ../../components/checkboxes/index
-
-
-
+        .filter__block
+            .filter-block
+                button(type='button').filter-block__btn
+                    span По типу продукта
+                    <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
+                    </svg>
+                .filter-block__content
+                        -
+                            var arr = {
+                                name: 'types',
+                                list: [
+                                    {
+                                        title: 'Увлажняющие средства для тела',
+                                        count: 2
+                                    },
+                                    {
+                                        title: 'Очищение / Снятие макияжа',
+                                    }
+                                ]
+                            };
+                        include ../../components/checkboxes/index
+        .filter__block
+            .filter-block
+                button(type='button').filter-block__btn
+                    span По диапазону
+                    <svg width="6" height="4" viewBox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3.00781L0.401925 0.00781286L5.59808 0.00781286L3 3.00781Z" fill="#333333"/>
+                    </svg>
+                .filter-block__content
+                        -
+                            var arr = {
+                                name: 'diapason',
+                                list: [
+                                    {
+                                        title: 'Lorem1',
+                                        count: 10
+                                    },
+                                    {
+                                        title: 'Lorem2',
+                                    }
+                                ]
+                            };
+                        include ../../components/radios/index
+    .filter__submit
+        span.filter__submit-txt Выбрано: 5
+        button(type='submit').filter__submit-btn Показать

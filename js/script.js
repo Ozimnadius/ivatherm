@@ -91,19 +91,30 @@ new Swiper('.news__swiper', {
         el: '.news__pag',
     },
 });
+$(".catalog__count").selectize({
+
+});
 new OzimnadAccordion({
     selector: '.catalog-menu',
     openAll: true
 });
-let filterBlocksAccordion = new OzimnadAccordion({
-    selector:'.filter__blocks',
-    openAll: true
+$('.filter').on('submit', function (e) {
+    e.preventDefault();
 });
 
-$('.filter__btn').on('click', function (e){
-   $('.filter__blocks').slideToggle(300);
 
-   this.classList.toggle('active');
+$('.filter').on('change', function (e) {
+    e.preventDefault();
+
+    $('.filter__submit').css('top',e.target.offsetTop+'px').addClass('active');
+});
+
+$('.filter__btn').on('click', function (e) {
+
+    $('.filter__blocks').slideToggle(300);
+
+    this.classList.toggle('active');
+
 });
 window.addEventListener('load', function () {
 
@@ -130,6 +141,10 @@ window.addEventListener('load', function () {
             inputs[handle].value = Math.round(values[handle]);
         });
 
+        range.noUiSlider.on('end', function (values, handle) {
+            $(inputs[handle]).trigger('change');
+        });
+
         inputs.forEach((i, x) => {
             i.addEventListener('change', function () {
                 range.noUiSlider.set(getValues(x, this.value));
@@ -146,4 +161,21 @@ window.addEventListener('load', function () {
     });
 });
 
+$('.filter-block__btn').on('click', function (){
+    let $this = $(this);
+    $this.next().slideToggle(300);
+    $this.toggleClass('active');
+});
+
+$('[data-hide="btn"]').on('click', function () {
+    let $this = $(this),
+        $parent = $this.closest('[data-hide="parent"]'),
+        items = $parent.find('[data-hidden]');
+
+    items.slideToggle(100);
+    $this.toggleClass('open');
+});
+$(".sort").selectize({
+
+});
 //# sourceMappingURL=script.js.map

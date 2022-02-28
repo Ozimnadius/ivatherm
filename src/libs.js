@@ -7,3 +7,4 @@
 // @prepros-append ../node_modules/ozimnad-tabs/dist/script.js
 // @prepros-append ../node_modules/ozimnad-accordion/dist/script.js
 // @prepros-append ../node_modules/nouislider/dist/nouislider.js
+// @prepros-append ../node_modules/selectize/dist/js/standalone/selectize.js

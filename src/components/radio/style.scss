@@ -1,4 +1,4 @@
-.checkbox {
+.radio {
   display: block;
   padding: 4px 2px;
   cursor: pointer;
@@ -8,16 +8,13 @@
     opacity: 0;
     position: absolute;
     margin-top: -10px;
-    &:checked + .checkbox__fake {
-      .checkbox {
+    &:checked + .radio__fake {
+      .radio {
         &__check {
-          background-color: var(--primary);
+          //background-color: var(--primary);
           box-shadow: 0px 0px 0px 2px rgba(186, 130, 255, 0.25);
           border-color: var(--primary);
-
-          svg{
-            opacity: 1;
-          }
+          border-width: 6px;
         }
       }
     }
@@ -34,14 +31,11 @@
     width: 21px;
     height: 21px;
     border: 1px solid #c5cdd7;
+    border-radius: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    svg{
-      opacity: 0;
-    }
   }
 
   &__title{

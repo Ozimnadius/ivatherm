@@ -1,0 +1,3 @@
+$(".catalog__count").selectize({
+
+});

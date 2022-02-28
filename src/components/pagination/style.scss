@@ -1,0 +1,58 @@
+%item {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 500;
+  @include tr;
+
+  &:hover {
+    color: var(--primary-light);
+  }
+
+  &.active {
+    background-color: #f8f8f8;
+  }
+}
+
+.pagination {
+  display: flex;
+
+  &__arr {
+    @extend %item;
+
+    &:hover {
+      svg {
+        stroke: var(--primary-light);
+      }
+    }
+
+    svg {
+      fill: none;
+      stroke: var(--black);
+      @include tr;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    @extend %item;
+
+
+    &:hover {
+      svg {
+        rect {
+          fill: var(--primary-light);
+        }
+      }
+    }
+  }
+}

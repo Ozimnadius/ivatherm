@@ -1,0 +1,9 @@
+label.radio
+    input(type='radio' name=name value=i.title).radio__input
+    span.radio__fake
+        span.radio__check
+        span.radio__right
+            span.radio__title= i.title
+            if i.count
+                span.radio__count.
+                    &nbsp;(#{i.count})
