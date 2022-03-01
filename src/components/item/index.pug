@@ -10,10 +10,10 @@ div(class=i.cls).item
                     .item__label= label
         if i.discount
             .item__discount= i.discount
-        a(href="#").item__img
+        a(href="/catalog/product/").item__img
             img(src=i.img alt=i.title)
     .item__middle
-        a(href="#").item__title= i.title
+        a(href="/catalog/product/").item__title= i.title
         .item__rating
             -var rating = i.rating
             include ../rating/index

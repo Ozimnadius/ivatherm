@@ -1,3 +1,6 @@
-$(".sort").selectize({
+//sort
+(function () {
+    $(".sort").selectize({
 
-});
+    });
+}());

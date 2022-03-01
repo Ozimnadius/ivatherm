@@ -1,0 +1,55 @@
+.count{
+  position: relative;
+  display: inline-block;
+
+  &__input {
+    width: 160px;
+    height: 54px;
+    border-radius: 2px;
+    border: 2px solid #f8f8f8;
+    background-color: var(--white);
+
+    appearance: none;
+    text-align: center;
+    padding: 0 50px;
+    -moz-appearance: textfield;
+
+    font-size: 16px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__btn{
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    top: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    @include tr;
+
+    &:hover{
+      background: var(--grey-light);
+      border-color: var(--grey-light);
+    }
+    &:focus{
+      border-color: rgba(#BA82FF,.1);
+    }
+  }
+
+  &__down{
+    left: 4px;
+  }
+
+  &__up{
+    right: 4px;
+  }
+
+}

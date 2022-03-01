@@ -42,80 +42,107 @@ const media = {
 window.addEventListener("load", function () {
 
     let mask = new Inputmask("+7(999)999-99-99");
-    mask.mask('.input[type="tel"]');
+    mask.mask('input[type="tel"]');
 
 });
 
-const swiperBanner = new Swiper('.banner__swiper', {
-    loop: true,
-    navigation: {
-        nextEl: '.banner__next',
-        prevEl: '.banner__prev',
-    },
-    autoplay: {
-        delay: 5000,
-    },
-});
-if (document.querySelector('.tabs')) {
-    new OzimnadTabs({
-        selector: '.tabs'
+//banner
+(function () {
+    const swiperBanner = new Swiper('.banner__swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.banner__next',
+            prevEl: '.banner__prev',
+        },
+        autoplay: {
+            delay: 5000,
+        },
     });
-}
-let sliders = document.querySelectorAll('.slider');
+}());
+//tabs
+(function () {
+    if (document.querySelector('.tabs')) {
+        new OzimnadTabs({
+            selector: '.tabs'
+        });
+    }
+}());
+//slider
+(function () {
+    let sliders = document.querySelectorAll('.slider');
 
+    sliders.forEach(function (slider){
 
-sliders.forEach(function (slider){
-    new Swiper(slider.querySelector('.slider__swiper'), {
-        slidesPerView: 4,
+        let elem = slider.querySelector('.slider__swiper'),
+            settings = {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: slider.querySelector('.slider__next'),
+                    prevEl: slider.querySelector('.slider__prev'),
+                },
+            };
+        if (elem.dataset.type == 2 ){
+            settings.slidesPerView = 'auto'
+        }
+
+        new Swiper(elem, settings);
+
+    });
+}());
+//news
+(function () {
+    new Swiper('.news__swiper', {
+        slidesPerView: 3,
         spaceBetween: 20,
         // autoplay: {
         //     delay: 1000,
         // },
         navigation: {
-            nextEl: slider.querySelector('.slider__next'),
-            prevEl: slider.querySelector('.slider__prev'),
+            nextEl: '.news__next',
+            prevEl: '.news__prev',
+        },
+        pagination: {
+            el: '.news__pag',
         },
     });
-});
-new Swiper('.news__swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    // autoplay: {
-    //     delay: 1000,
-    // },
-    navigation: {
-        nextEl: '.news__next',
-        prevEl: '.news__prev',
-    },
-    pagination: {
-        el: '.news__pag',
-    },
-});
-$(".catalog__count").selectize({
+}());
+//catalog
+(function () {
+    $(".catalog__count").selectize({});
+}());
+//catalog-menu
+(function () {
+    if (document.querySelector('.catalog-menu')) {
+        new OzimnadAccordion({
+            selector: '.catalog-menu',
+            openAll: true
+        });
+    }
+}());
 
-});
-new OzimnadAccordion({
-    selector: '.catalog-menu',
-    openAll: true
-});
-$('.filter').on('submit', function (e) {
-    e.preventDefault();
-});
+//filter
+(function () {
+    $('.filter').on('submit', function (e) {
+        e.preventDefault();
+    });
 
 
-$('.filter').on('change', function (e) {
-    e.preventDefault();
+    $('.filter').on('change', function (e) {
+        e.preventDefault();
 
-    $('.filter__submit').css('top',e.target.offsetTop+'px').addClass('active');
-});
+        $('.filter__submit').css('top',e.target.offsetTop+'px').addClass('active');
+    });
 
-$('.filter__btn').on('click', function (e) {
+    $('.filter__btn').on('click', function (e) {
 
-    $('.filter__blocks').slideToggle(300);
+        $('.filter__blocks').slideToggle(300);
 
-    this.classList.toggle('active');
+        this.classList.toggle('active');
 
-});
+    });
+}());
+//range
 window.addEventListener('load', function () {
 
     let ranges = document.querySelectorAll('.range');
@@ -161,21 +188,90 @@ window.addEventListener('load', function () {
     });
 });
 
-$('.filter-block__btn').on('click', function (){
-    let $this = $(this);
-    $this.next().slideToggle(300);
-    $this.toggleClass('active');
-});
+//filter-block
+(function () {
+    $('.filter-block__btn').on('click', function (){
+        let $this = $(this);
+        $this.next().slideToggle(300);
+        $this.toggleClass('active');
+    });
 
-$('[data-hide="btn"]').on('click', function () {
-    let $this = $(this),
-        $parent = $this.closest('[data-hide="parent"]'),
-        items = $parent.find('[data-hidden]');
+    $('[data-hide="btn"]').on('click', function () {
+        let $this = $(this),
+            $parent = $this.closest('[data-hide="parent"]'),
+            items = $parent.find('[data-hidden]');
 
-    items.slideToggle(100);
-    $this.toggleClass('open');
-});
-$(".sort").selectize({
+        items.slideToggle(100);
+        $this.toggleClass('open');
+    });
+}());
+//sort
+(function () {
+    $(".sort").selectize({
 
-});
+    });
+}());
+//product
+(function () {
+
+    let swiperProductThumbs = new Swiper(".product__thumbs", {
+        direction: 'vertical',
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    let swiperProductGallery = new Swiper(".product__swiper", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".product__next",
+            prevEl: ".product__prev",
+        },
+        thumbs: {
+            swiper: swiperProductThumbs,
+        },
+    });
+
+
+    let count = document.querySelector('.product__count input');
+
+    if (count) {
+        document.querySelector('.product__count input').addEventListener('change', function () {
+            let price = document.querySelector('[data-product="price"]').innerHTML;
+
+            let sum = Number(price * this.value).toLocaleString(true);
+
+            document.querySelector('.product__buy-price').innerHTML = sum + ' руб.';
+        });
+    }
+}());
+(function () {
+    $('body').on('click', '.count__down', function (e) {
+        e.preventDefault();
+        let btn = $(this),
+            count = btn.closest('.count'),
+            input = count.find('.count__input')[0];
+        input.stepDown();
+        input.dispatchEvent(new Event('change'));
+    });
+
+    $('body').on('click', '.count__up', function (e) {
+        e.preventDefault();
+        let btn = $(this),
+            count = btn.closest('.count'),
+            input = count.find('.count__input')[0];
+        input.stepUp();
+        input.dispatchEvent(new Event('change'));
+
+    });
+
+}());
+(function () {
+    if (document.querySelector('.product-accordion')) {
+        new OzimnadAccordion({
+            selector: '.product-accordion'
+        });
+    }
+}());
 //# sourceMappingURL=script.js.map

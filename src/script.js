@@ -12,4 +12,7 @@
 // @prepros-append components/range/script.js
 // @prepros-append components/filter-block/script.js
 // @prepros-append components/sort/script.js
+// @prepros-append components/product/script.js
+// @prepros-append components/count/script.js
+// @prepros-append components/product-accordion/script.js
 

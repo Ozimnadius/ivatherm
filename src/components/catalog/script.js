@@ -1,3 +1,4 @@
-$(".catalog__count").selectize({
-
-});
+//catalog
+(function () {
+    $(".catalog__count").selectize({});
+}());

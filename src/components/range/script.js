@@ -1,3 +1,4 @@
+//range
 window.addEventListener('load', function () {
 
     let ranges = document.querySelectorAll('.range');

@@ -37,6 +37,6 @@ const media = {
 window.addEventListener("load", function () {
 
     let mask = new Inputmask("+7(999)999-99-99");
-    mask.mask('.input[type="tel"]');
+    mask.mask('input[type="tel"]');
 
 });

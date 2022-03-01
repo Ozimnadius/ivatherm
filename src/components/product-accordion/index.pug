@@ -1,0 +1,18 @@
+.product-accordion
+    each i in arr
+        div(data-accordion='item').product-accordion__item
+            div(data-accordion='btn').product-accordion__btn
+                span= i
+                <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8.00391V16.0039" />
+                <path d="M16 12.0039H8"/>
+                </svg>
+            div(data-accordion='collapse').product-accordion__collapse
+                div(data-accordion='content').product-accordion__content
+                    p Лосьон, который превращается в легкую пену, которая мягко очищает, удаляет макияж и загрязнения с лица, глаз и губ, увлажняет и защищает микробиом кожи. Кожа станет более гладкой, бархатистой и сияющей.
+                    p Очищающая пена Aquafil Hydra, обогащенная термальной водой Herculane, успокаивает и очищает даже самую чувствительную кожу.
+                    p Гипоаллергенная формула без мыла, парабенов и отдушек.
+                    p
+                        | Переработанная упаковка
+                        br
+                        | 15% ингредиентов БИО происхождения

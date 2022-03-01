@@ -1,8 +1,18 @@
 .slider{
-  position: relative;
+
+  &__top{
+    margin-bottom: 30px;
+  }
+
+  &__bottom{
+    position: relative;
+  }
 
   &__slide{
     height: auto;
+    &--extra{
+      width: 460px;
+    }
   }
 
   &__nav{
