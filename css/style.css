@@ -2684,7 +2684,7 @@ input, textarea {
 }
 
 .feed {
-  background-color: var(--grey-light);
+  background: var(--grey-light) url("/images/content/feed/pattern.svg") right top no-repeat;
 }
 .feed__wrap {
   padding-top: 40px;
