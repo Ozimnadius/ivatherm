@@ -1,0 +1,25 @@
+div(data-price=i.price).basket-item
+    button(type='button').basket-item__del
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.002 5.70781L18.302 5.00781L12.002 11.3078L5.70195 5.00781L5.00195 5.70781L11.302 12.0078L5.00195 18.3078L5.70195 19.0078L12.002 12.7078L18.302 19.0078L19.002 18.3078L12.702 12.0078L19.002 5.70781Z" fill="#4C2F92"/>
+        </svg>
+    .basket-item__left
+        .basket-item__img
+            img(src=i.img alt=i.title)
+        .basket-item__content
+            if i.sticks
+                .basket-item__sticks
+                    each stick in i.sticks
+                        div(class=stick.cls).basket-item__stick= stick.name
+            .basket-item__title= i.title
+            if i.discount
+                .basket-item__discount.
+                    Скидка: <b>#{i.discount}</b>
+    .basket-item__center
+        .basket-item__count
+            include ../../components/count/index
+    .basket-item__right
+        .basket-item__sums
+            .basket-item__sum= i.sum
+            if i.oldsum
+                .basket-item__oldsum= i.oldsum

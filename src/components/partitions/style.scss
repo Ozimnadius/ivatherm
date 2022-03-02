@@ -1,6 +1,6 @@
 .partitions {
 
-  &__title{
+  &__title {
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
     color: var(--secondary);
     font-size: 62px;
@@ -12,53 +12,81 @@
     z-index: 2;
   }
 
-  &__grid{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    @include xlg-block {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 
-  &__item{
+  &__item {
     position: relative;
     overflow: hidden;
+    @include xlg-block {
+      grid-column: span 2;
+    }
 
-    &:hover{
-      img{
+    &:hover {
+      img {
         transform: scale(1.1);
       }
     }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
-      padding-top: calc(225/464*100%);
+      padding-top: calc(225 / 464 * 100%);
     }
 
-    &:nth-child(1),&:nth-child(3){
-      &:before{
-        padding-top: calc(240/464*100%);
+    &:nth-child(1), &:nth-child(3) {
+      &:before {
+        padding-top: calc(240 / 464 * 100%);
       }
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
       grid-column: span 2;
       grid-row: span 2;
+      @include xlg-block {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
 
-      .partitions__btn{
+      .partitions__btn {
         display: flex;
       }
     }
 
-    &:nth-child(4){
+    &:nth-child(4) {
       grid-column: span 3;
       margin: 60px 0;
-      &:before{
-        padding-top: calc(580/1440*100%);
+      @include xlg-block {
+        grid-column: span 6;
+        margin: 40px 0;
+      }
+
+      &:before {
+        padding-top: calc(580 / 1440 * 100%);
+      }
+    }
+
+    &:nth-child(5), &:nth-child(6) {
+      @include xlg-block {
+        grid-column: span 3;
+      }
+
+    }
+
+    &:last-child{
+      @include xlg-block{
+        display: none;
       }
     }
   }
 
-  &__btn{
+  &__btn {
     display: none;
     position: absolute;
     z-index: 3;
@@ -66,7 +94,7 @@
     left: 30px;
   }
 
-  &__img{
+  &__img {
     display: block;
     position: absolute;
     z-index: 1;
@@ -75,7 +103,7 @@
     left: 0;
     right: 0;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;

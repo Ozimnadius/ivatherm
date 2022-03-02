@@ -1,0 +1,110 @@
+extends ../../main
+
+block variables
+    - var title = 'Корзина'
+
+block content
+    .page
+        .page__breadcrumbs
+            .container
+                include ../../components/breadcrumbs/index
+        .container
+            h1.page__title Корзина
+            .page__section
+                include ../../components/order/index
+        .page__interested
+            .container
+                -
+                    var slider = {
+                        title: 'Персональные рекомендации',
+                        list: [
+                            {
+                                sticks: [
+                                    {
+                                        cls: 'item__stick--new',
+                                        title: 'Новинка'
+                                    },
+                                    {
+                                        cls: 'item__stick--hit',
+                                        title: 'Хит'
+                                    },
+                                ],
+                                labels: [
+                                    "Средство для чистки лица и тела",
+                                    "Для очень сухой и атопичной кожи"
+                                ],
+                                img: '/images/content/items/1.jpg',
+                                title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                                rating: {
+                                    stars: 1,
+                                    count: '(16 отзывов)'
+                                },
+                                price: '2200',
+                                icon: '/images/content/items/icon1.svg',
+                            },
+                            {
+                                cls: 'sun',
+                                sticks: [
+                                    {
+                                        cls: 'item__stick--discount',
+                                        title: 'Скидка'
+                                    },
+                                ],
+                                labels: [
+                                    "Средство для чистки лица и тела",
+                                    "Для очень сухой и атопичной кожи"
+                                ],
+                                discount: '-35%',
+                                img: '/images/content/items/2.jpg',
+                                title: 'Sunlight Kids Молочко с очень высокой степенью защиты от солнца SPF50',
+                                rating: {
+                                    stars: 4,
+                                    count: '(16 отзывов)'
+                                },
+                                price: '2200',
+                                oldprice: '2600',
+                                icon: '/images/content/items/icon2.svg',
+                            },
+                            {
+                                labels: [
+                                    "Средство для чистки лица и тела",
+                                    "Для очень сухой и атопичной кожи"
+                                ],
+                                img: '/images/content/items/3.jpg',
+                                title: 'Aquafil Hydra Light Мягкое очищающее молочко 200m',
+                                rating: {
+                                    stars: 5,
+                                },
+                                price: '2200',
+                                icon: '/images/content/items/icon1.svg',
+                            },
+                            {
+                                sticks: [
+                                    {
+                                        cls: 'item__stick--new',
+                                        title: 'Новинка'
+                                    },
+                                ],
+                                labels: [
+                                    "Средство для чистки лица и тела",
+                                    "Для очень сухой и атопичной кожи"
+                                ],
+                                img: '/images/content/items/4.jpg',
+                                title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                                rating: {
+                                    stars: 5,
+                                },
+                                price: '2200',
+                                icon: '/images/content/items/icon1.svg',
+                            },
+                        ]
+                    }
+                include ../../components/slider/index
+
+
+
+
+
+
+
+

@@ -1,9 +1,12 @@
-.nav{
+.nav {
   display: flex;
   justify-content: center;
   gap: 25px;
+  @include lg-block {
+    justify-content: flex-start;
+  }
 
-  &__item{
+  &__item {
     color: var(--black);
     font-size: 16px;
     white-space: nowrap;
@@ -11,7 +14,7 @@
     pointer-events: all;
     @include tr;
 
-    &:hover{
+    &:hover {
       color: var(--primary-light);
     }
   }

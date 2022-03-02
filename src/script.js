@@ -15,4 +15,5 @@
 // @prepros-append components/product/script.js
 // @prepros-append components/count/script.js
 // @prepros-append components/product-accordion/script.js
+// @prepros-append components/basket/script.js
 

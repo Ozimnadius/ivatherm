@@ -1,5 +1,6 @@
 .news-item{
   box-sizing: border-box;
+  display: block;
 
   &:hover{
     .news-item{
@@ -35,6 +36,12 @@
       height: 49px;
       background: url("/images/content/logo.svg") 0 0 no-repeat;
       background-size: cover;
+      @include xlg-block{
+        width: 80px;
+        height: 24px;
+        top: 15px;
+        left: 15px;
+      }
     }
 
     img{
@@ -49,7 +56,6 @@
     }
   }
 
-
   &__wrap{
     position: relative;
     z-index: 3;
@@ -60,20 +66,33 @@
 
     display: flex;
     flex-direction: column;
+    @include xlg-block{
+      margin: 0;
+      padding: 24px;
+    }
   }
 
   &__title{
     font-size: 20px;
     margin-bottom: 20px;
     @include tr;
+    @include xlg-block{
+      font-size: 16px;
+    }
   }
 
   &__txt{
     font-size: 14px;
     margin-bottom: 40px;
+    @include xlg-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__more{
     align-self: flex-end;
+    @include xlg-block{
+      font-size: 14px;
+    }
   }
 }

@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   gap: 25px;
+  flex-wrap: wrap;
+  @include lg-block{
+    justify-content: flex-end;
+    gap: 20px;
+  }
 
   &__item{
     display: flex;
@@ -22,6 +27,11 @@
 
     &--enter{
       padding-right: 25px;
+      @include lg-block{
+        padding: 0;
+        width: 100%;
+        justify-content: flex-end;
+      }
     }
 
     &-count{

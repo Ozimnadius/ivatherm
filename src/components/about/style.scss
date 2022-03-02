@@ -1,42 +1,45 @@
 .about {
-  padding: 80px 0;
 
-
-  &__grid{
-    display:grid;
+  &__grid {
+    display: grid;
     grid-template-columns: 626fr 709fr;
     grid-gap: 100px;
-    align-items: center;
+    //align-items: center;
+    @include xlg-block {
+      grid-template-columns: 620fr 530fr;
+      grid-gap: 30px;
+    }
   }
 
-  &__content{
+  &__content {
     margin-bottom: 40px;
 
-    p{
+    p {
       color: #000000;
       font-size: 18px;
       margin-bottom: 35px;
-      &:last-child{
+
+      &:last-child {
         margin-bottom: 0;
       }
     }
   }
 
-  &__link{
+  &__link {
 
   }
 
-  &__doc{
+  &__doc {
     position: relative;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
-      padding-top: calc(471/709*100%);
+      padding-top: calc(471 / 709 * 100%);
     }
   }
 
-  &__img{
+  &__img {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -47,7 +50,7 @@
     object-position: center;
   }
 
-  &__name{
+  &__name {
     text-transform: uppercase;
     position: absolute;
     z-index: 2;

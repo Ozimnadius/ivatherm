@@ -3,6 +3,9 @@
 
   &__slide{
     height: 680px;
+    @include xlg-block{
+      height: 493px;
+    }
 
     img{
       display: block;

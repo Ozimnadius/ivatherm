@@ -10,50 +10,67 @@
 @import "pages/style";
 
 //COMPONENTS
-@import "components/header/style";
-@import "components/lang/style";
-@import "components/header-cabinet/style";
-@import "components/drop-menu/style";
-@import "components/nav/style";
-@import "components/banner/style";
+//A
 @import "components/about/style";
-@import "components/partitions/style";
-@import "components/populars/style";
-@import "components/tabs/style";
-@import "components/slider/style";
-@import "components/item/style";
-@import "components/item-extra/style";
-@import "components/rating/style";
-@import "components/promo/style";
-@import "components/news/style";
-@import "components/news-item/style";
-@import "components/subscribe/style";
+@import "components/aside/style";
+//B
+@import "components/banner/style";
+@import "components/basket/style";
+@import "components/basket-item/style";
 @import "components/breadcrumbs/style";
-@import "components/sections/style";
-@import "components/section/style";
+//C
 @import "components/catalog/style";
 @import "components/catalog-banner/style";
-@import "components/aside/style";
 @import "components/catalog-menu/style";
-@import "components/filter/style";
-@import "components/filter-block/style";
-@import "components/range/style";
+@import "components/catalog-promo/style";
 @import "components/checkboxes/style";
 @import "components/checkbox/style";
+@import "components/contacts/style";
+@import "components/count/style";
+//D
+@import "components/drop-menu/style";
+//F
+@import "components/feed/style";
+@import "components/filter/style";
+@import "components/filter-block/style";
+@import "components/footer/style";
+//H
+@import "components/header/style";
+@import "components/header-cabinet/style";
+//I
+@import "components/item/style";
+@import "components/item-extra/style";
+//L
+@import "components/lang/style";
+//M
+@import "components/menu/style";
+//N
+@import "components/nav/style";
+@import "components/news/style";
+@import "components/news-item/style";
+//O
+@import "components/order/style";
+//P
+@import "components/pagination/style";
+@import "components/partitions/style";
+@import "components/populars/style";
+@import "components/product/style";
+@import "components/product-accordion/style";
+@import "components/promo/style";
+//R
 @import "components/radios/style";
 @import "components/radio/style";
+@import "components/range/style";
+@import "components/rating/style";
+//S
+@import "components/sections/style";
+@import "components/section/style";
+@import "components/slider/style";
 @import "components/sort/style";
-@import "components/catalog-promo/style";
-@import "components/pagination/style";
-@import "components/product/style";
-@import "components/count/style";
-@import "components/product-accordion/style";
-@import "components/feed/style";
+@import "components/subscribe/style";
+//T
+@import "components/tabs/style";
 
-
-
-
-@import "components/footer/style";
 
 
 .debug {

@@ -84,6 +84,18 @@
     }
   }
 
+  &--white{
+    border: 1px solid var(--primary-light);
+    background-color: var(--white);
+    color: var(--primary-light);
+
+    &:hover{
+      border-color: var(--primary-light);
+      background-color: var(--primary);
+      color: var(--white);
+    }
+  }
+
 }
 
 .title{

@@ -1,0 +1,81 @@
+form.basket.order
+    .basket__left
+        .order__list
+            .order__item
+                .order__top
+                    .order__name Покупатель
+                .order__content
+                    .order__fields
+                        .order__field
+                            .order__field-name.
+                                ФИО <b>*</b>
+                            input(type='text' name='name' placeholder='Ваше имя').order__field-input
+                        .order__field
+                            .order__field-name.
+                                E-Mail <b>*</b>
+                            input(type='email' name='email' placeholder='Ваш email').order__field-input
+                        .order__field
+                            .order__field-name.
+                                Телефон <b>*</b>
+                            input(type='tel' name='tel' placeholder='Номер телефона').order__field-input
+
+                    button(type='button').order__next.btn.btn--primary Продолжить
+            .order__item
+                .order__top
+                    .order__name Способ доставки
+                    button(type='button').order__change.btn.btn--white Изменить
+                .order__content
+                    .order__item-title Почта России (EMS)
+                    .order__chars
+                        .order__char
+                            .order__char-name Индекс
+                            .order__char-val 123112
+                        .order__char
+                            .order__char-name Город
+                            .order__char-val Москва
+                        .order__char
+                            .order__char-name Стоимость доставки
+                            .order__char-val 200 руб.
+                        .order__char
+                            .order__char-name Срок доставки
+                            .order__char-val от 1 до 2 раб. дней
+
+
+            .order__item
+                .order__top
+                    .order__name Способ оплаты
+                    button(type='button').order__change.btn.btn--white Изменить
+                .order__content
+                    .order__item-title Сбербанк Онлайн
+    .basket__right
+        .basket__result
+            .basket__total
+                .basket__total-name Итого:
+                .basket__total-val 11 200 руб.
+            .basket__items
+                .basket__item
+                    .basket__item-name Товаров на:
+                    .basket__item-val 11 000 руб.
+                .basket__item
+                    .basket__item-name Доставка:
+                    .basket__item-val 200 руб.
+            .basket__discount
+                .basket__discount-name Экономия:
+                .basket__discount-val 1 500 руб.
+            .basket__promo
+                input(type='text' name='promo' placeholder='Есть промокод?').basket__promo-input
+                button(type='button').basket__promo-submit
+                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.8536 4.36527C16.0488 4.17001 16.0488 3.85343 15.8536 3.65817L12.6716 0.476185C12.4763 0.280923 12.1597 0.280923 11.9645 0.476185C11.7692 0.671447 11.7692 0.988029 11.9645 1.18329L14.7929 4.01172L11.9645 6.84015C11.7692 7.03541 11.7692 7.35199 11.9645 7.54725C12.1597 7.74251 12.4763 7.74251 12.6716 7.54725L15.8536 4.36527ZM0.5 4.51172H15.5V3.51172H0.5V4.51172Z" fill="#4C2F92"/>
+                    </svg>
+            .basket__infos
+                .basket__info
+                    .basket__info-top
+                        .basket__info-name Доставка:
+                        .basket__info-val Почта России (EMS)
+                    .basket__info-txt от 1 до 2 раб. дней
+                .basket__info
+                    .basket__info-top
+                        .basket__info-name Оплата:
+                        .basket__info-val Сбербанк Онлайн
+            button(type='button').basket__submit.btn.btn--primary Оформить заказ

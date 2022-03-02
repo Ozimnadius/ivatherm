@@ -1,0 +1,63 @@
+form.basket
+    .basket__left
+        .basket__head
+            .basket__title Товары в корзине:
+            button(type='button').basket__delete-all
+                span Очистить
+                <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 5.70781L18.3 5.00781L12 11.3078L5.7 5.00781L5 5.70781L11.3 12.0078L5 18.3078L5.7 19.0078L12 12.7078L18.3 19.0078L19 18.3078L12.7 12.0078L19 5.70781Z"/>
+                </svg>
+        .basket__list
+            -
+                var arr = [
+                    {
+                        img: '/images/content/items/1.jpg',
+                        sticks: [
+                            {
+                                name: 'Новинка',
+                                cls: 'basket-item__stick--new'
+                            },
+                            {
+                                name: 'Хит',
+                                cls: 'basket-item__stick--hit'
+                            }
+                        ],
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        price: 1100,
+                        sum: '4 400 руб.',
+                    },
+                    {
+                        img: '/images/content/items/2.jpg',
+                        sticks: [
+                            {
+                                name: 'Скидка',
+                                cls: 'basket-item__stick--discount'
+                            }
+                        ],
+                        title: 'Sunlight Kids Молочко с очень высокой степенью защиты от солнца SPF50',
+                        discount: '-35%',
+                        price: 1100,
+                        sum: '6 600 руб.',
+                        oldsum: '5 100 руб.',
+                    },
+
+                ];
+            each i in arr
+                .basket__item
+                    include ../../components/basket-item/index
+
+    .basket__right
+        .basket__result
+            .basket__total
+                .basket__total-name Итого:
+                .basket__total-val 11 000 руб.
+            .basket__discount
+                .basket__discount-name Экономия:
+                .basket__discount-val 1 500 руб.
+            .basket__promo
+                input(type='text' name='promo' placeholder='Есть промокод?').basket__promo-input
+                button(type='button').basket__promo-submit
+                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.8536 4.36527C16.0488 4.17001 16.0488 3.85343 15.8536 3.65817L12.6716 0.476185C12.4763 0.280923 12.1597 0.280923 11.9645 0.476185C11.7692 0.671447 11.7692 0.988029 11.9645 1.18329L14.7929 4.01172L11.9645 6.84015C11.7692 7.03541 11.7692 7.35199 11.9645 7.54725C12.1597 7.74251 12.4763 7.74251 12.6716 7.54725L15.8536 4.36527ZM0.5 4.51172H15.5V3.51172H0.5V4.51172Z" fill="#4C2F92"/>
+                    </svg>
+            button(type='button').basket__submit.btn.btn--primary Перейти к оформлению

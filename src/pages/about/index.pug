@@ -1,0 +1,34 @@
+extends ../../main
+
+block variables
+    - var title = 'О компании'
+
+block content
+    .page
+        .page__breadcrumbs
+            .container
+                include ../../components/breadcrumbs/index
+        .container
+            h1.page__title О компании
+            .page__section
+                include ../../components/about/index
+
+        .page__extra
+            .container
+                -
+                    var slider = {
+                        type: 2,
+                        title: 'Ранее вы смотрели',
+                        list: [1, 2, 3]
+                    }
+                include ../../components/slider/index
+        .page__feed
+            include ../../components/feed/index
+
+
+
+
+
+
+
+

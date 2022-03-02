@@ -1,4 +1,5 @@
 .slider{
+  position: relative;
 
   &__top{
     margin-bottom: 30px;
@@ -45,6 +46,9 @@
     justify-content: center;
     gap: 20px;
     margin-top: 70px;
+    @include xlg-block{
+      margin-top: 30px;
+    }
 
     .swiper-pagination-bullet{
       width: 32px;

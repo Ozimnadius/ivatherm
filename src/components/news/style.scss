@@ -1,6 +1,10 @@
 .news{
   padding: 80px 0;
 
+  @include xlg-block{
+    padding: 60px 0;
+  }
+
   &__title{
     margin-bottom: 30px;
   }

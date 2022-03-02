@@ -30,48 +30,52 @@ $vh: 1080;
     }
   }
 
-  h1 {
-    font-size: 40px;
+  h1,h2,h3,h4,h5,h6,p,ol,ul {
+    margin-bottom: 15px;
   }
-  h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 28px;
-  }
-  h4 {
-    font-size: 24px;
-  }
-  h5 {
-    font-size: 20px;
-  }
-  h6 {
+
+  ol{
+    list-style: decimal;
     font-size: 16px;
+    color: #000;
+    padding-left: 20px;
   }
-  p {
-    margin-bottom: 20px;
+
+  a{
+    color: var(--primary);
+    text-decoration: underline;
+
+    @include tr;
+    &:hover{
+      color: var(--primary-light);
+    }
   }
+
 
 }
 
 @mixin headers() {
+  h1,h2,h3,h4,h5,h6{
+    color: #000;
+  }
+
   h1 {
     font-size: 40px;
   }
   h2 {
-    font-size: 32px;
-  }
-  h3 {
     font-size: 28px;
   }
-  h4 {
+  h3 {
     font-size: 24px;
   }
+  h4 {
+    font-size: 18px;
+  }
   h5 {
-    font-size: 20px;
+    font-size: 16px;
   }
   h6 {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

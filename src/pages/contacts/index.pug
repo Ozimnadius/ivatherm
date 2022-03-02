@@ -1,0 +1,58 @@
+extends ../../main
+
+block variables
+    - var title = 'Контакты'
+
+block content
+    .page
+        .page__breadcrumbs
+            .container
+                include ../../components/breadcrumbs/index
+        .container
+            h1.page__title Контакты
+            .page__grid
+                aside.page__aside.aside
+                    .aside__menu
+                        -
+                            var menu = [
+                                {
+                                    title: 'Оплаты',
+                                },
+                                {
+                                    title: 'Доставка',
+                                },
+                                {
+                                    title: 'Контакты',
+                                    cls: 'active'
+                                }
+                            ];
+                        include ../../components/menu/index
+
+                    button(type='button').aside__callback-btn.btn.btn--grey
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.3685 19.2691L20 19.4381L19.831 18.8066L18.9573 15.542C19.5314 14.4231 19.8298 13.1833 19.828 11.9258C19.828 7.55141 16.285 4.00391 11.9136 4.00391C7.54298 4.00391 4 7.55141 4 11.9258C4 16.301 7.54298 19.8477 11.9144 19.8477C13.5704 19.8477 15.108 19.3377 16.3793 18.4671L19.3685 19.2691Z" fill="#BA82FF" stroke="#4C2F92"/>
+                        </svg>
+                        span Задать вопрос
+
+                main.page__content
+                    include ../../components/contacts/index
+
+        .page__extra
+            .container
+                -
+                    var slider = {
+                        type: 2,
+                        title: 'Ранее вы смотрели',
+                        list: [1, 2, 3]
+                    }
+                include ../../components/slider/index
+        .page__feed
+            include ../../components/feed/index
+
+
+
+
+
+
+
+
