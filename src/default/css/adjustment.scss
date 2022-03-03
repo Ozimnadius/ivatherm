@@ -36,6 +36,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  @include lg-block{
+    overflow: hidden;
+  }
 
   &__content{
     flex-grow: 1;

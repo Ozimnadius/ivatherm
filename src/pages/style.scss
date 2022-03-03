@@ -35,6 +35,9 @@
     @include xlg-block{
       margin: 60px 0;
     }
+    @include lg-block{
+      margin: 40px 0;
+    }
   }
 
   &__section{

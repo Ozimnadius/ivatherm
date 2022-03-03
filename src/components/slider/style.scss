@@ -1,12 +1,23 @@
 .slider{
   position: relative;
 
+
   &__top{
     margin-bottom: 30px;
   }
 
   &__bottom{
     position: relative;
+    @include sm-block{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__swiper{
+    @include sm-block{
+      width: 100%;
+    }
   }
 
   &__slide{
@@ -23,6 +34,14 @@
     right: 0;
     display: flex;
     gap: 30px;
+    @include lg-block{
+      bottom: calc(100% + 15px);
+    }
+    @include sm-block{
+      position: static;
+      order: -1;
+      justify-content: center;
+    }
   }
 
   &__arr{

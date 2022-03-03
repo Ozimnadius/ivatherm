@@ -32,6 +32,9 @@
 
   &__count{
     font-size: 14px;
+    @include sm-block{
+      display: none;
+    }
 
     &--empty{
       color: #84849a;

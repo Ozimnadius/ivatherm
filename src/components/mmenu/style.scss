@@ -1,0 +1,103 @@
+.mmenu{
+  position: fixed;
+  z-index: 1000;
+  top: 126px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  &.open{
+    .mmenu{
+
+      &__controls{
+      bottom: 0;
+    }
+
+      &__menu{
+        bottom: 56px;
+      }
+
+    }
+  }
+
+  &__controls{
+    position: absolute;
+    z-index: 3;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: var(--grey-light);
+    border-top: 2px solid var(--primary);
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+
+    pointer-events: all;
+    @include tr;
+  }
+
+  &__control{
+    position: relative;
+
+    &-count{
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: var(--primary);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__wrap{
+    border: 8px solid var(--white);
+    background-color: var(--grey-light);
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  &__menu{
+    height: calc(100% - 56px);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+
+    pointer-events: all;
+    @include tr;
+  }
+
+  &__nav{
+    height: calc(100% - 56px);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+
+    pointer-events: all;
+    @include tr;
+
+    &.open{
+      bottom: 56px;
+    }
+  }
+}

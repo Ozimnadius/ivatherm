@@ -37,6 +37,7 @@ const jsTools = {
 
 const media = {
     mobile: window.matchMedia("(max-width: 767.98px)"),
+    tablet: window.matchMedia("(max-width: 1279.98px)"),
 }
 
 window.addEventListener("load", function () {
@@ -75,16 +76,32 @@ window.addEventListener("load", function () {
 
         let elem = slider.querySelector('.slider__swiper'),
             settings = {
-                slidesPerView: 4,
-                spaceBetween: 20,
+                slidesPerView: 2,
+                spaceBetween: 10,
                 navigation: {
                     nextEl: slider.querySelector('.slider__next'),
                     prevEl: slider.querySelector('.slider__prev'),
                 },
+                breakpoints: {
+                    767.98: {
+                        spaceBetween: 20
+                    },
+                    1279.98: {
+                        slidesPerView: 4
+                    }
+                }
             };
 
         if (elem.dataset.sliderType == 2) {
-            settings.slidesPerView = 'auto'
+            settings.slidesPerView = 'auto';
+            settings.breakpoints = {
+                767.98: {
+                    spaceBetween: 20
+                },
+                1279.98: {
+                    slidesPerView: 'auto'
+                }
+            }
         }
 
         new Swiper(elem, settings);
@@ -94,7 +111,7 @@ window.addEventListener("load", function () {
 //news
 (function () {
     new Swiper('.news__swiper', {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 20,
         // autoplay: {
         //     delay: 1000,
@@ -103,9 +120,17 @@ window.addEventListener("load", function () {
             nextEl: '.news__next',
             prevEl: '.news__prev',
         },
-        pagination: {
-            el: '.news__pag',
-        },
+        breakpoints: {
+            767.98: {
+                slidesPerView: 2
+            },
+            1279.98: {
+                slidesPerView: 3,
+                pagination: {
+                    el: '.news__pag',
+                },
+            }
+        }
     });
 }());
 //catalog
@@ -276,4 +301,100 @@ window.addEventListener('load', function () {
     }
 }());
 
+window.addEventListener('click', function (e){
+   let target = e.target,
+       drop = document.querySelector('.drop-menu__drop');
+
+   if (target.closest('.drop-menu__btn')){
+       console.log(e);
+       e.preventDefault();
+       drop.classList.add('active');
+   } else{
+       drop.classList.remove('active');
+   }
+});
+
+window.addEventListener('load', function () {
+    new Mmenu();
+});
+
+class Mmenu {
+    constructor(options) {
+        let def = {
+            selector: '[data-mmenu="main"]',
+            selectorOpen: '[data-mmenu="open"]',
+            selectorOpenNav: '[data-mmenu="openNav"]',
+            selectorNav: '[data-mmenu="nav"]',
+            active: false,
+            navActive: false
+        }
+
+        Object.assign(this, def, options);
+
+        this.main = document.querySelector(this.selector);
+        this.btn = document.querySelector(this.selectorOpen);
+        this.btnNav = document.querySelector(this.selectorOpenNav);
+        this.nav = document.querySelector(this.selectorNav);
+
+        this.#events();
+    }
+
+    #events() {
+        this.btn.addEventListener('click', this.click);
+        this.btnNav.addEventListener('click',this.clickNav);
+    }
+
+    click = () => {
+        this.overflow();
+
+        if (this.active) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    open() {
+        this.btn.classList.add('open');
+        this.btn.classList.remove('close');
+        this.main.classList.add('open');
+
+        this.active = true;
+    }
+
+    close() {
+        this.btn.classList.remove('open');
+        this.btn.classList.add('close');
+        this.main.classList.remove('open');
+
+        this.active = false;
+        this.closeNav();
+    }
+
+    clickNav=()=>{
+        if (this.navActive) {
+            this.closeNav();
+        } else {
+            this.openNav();
+        }
+    }
+
+    openNav() {
+        this.nav.classList.add('open');
+        this.navActive = true;
+    }
+
+    closeNav() {
+        this.nav.classList.remove('open');
+        this.navActive = false;
+    }
+
+    overflow() {
+        if (this.active) {
+            document.querySelector('body').classList.remove('ovh');
+        } else {
+            document.querySelector('body').classList.add('ovh');
+        }
+    }
+}
 //# sourceMappingURL=script.js.map

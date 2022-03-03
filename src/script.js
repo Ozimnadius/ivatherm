@@ -16,4 +16,6 @@
 // @prepros-append components/count/script.js
 // @prepros-append components/product-accordion/script.js
 // @prepros-append components/basket/script.js
+// @prepros-append components/drop-menu/script.js
+// @prepros-append components/mmenu/script.js
 

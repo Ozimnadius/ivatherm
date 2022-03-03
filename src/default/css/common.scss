@@ -105,4 +105,12 @@
   background: linear-gradient(90deg, #F9F9F9 0%, rgba(249, 249, 249, 0.15) 23.96%, rgba(248, 248, 248, 0) 100%);
   padding: 15px 45px;
   border-left: 3px solid var(--primary);
+  @include sm-block{
+    font-size: 24px;
+    padding: 11px 15px;
+  }
+}
+
+.ovh{
+  overflow: hidden;
 }

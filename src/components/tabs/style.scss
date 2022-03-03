@@ -8,6 +8,15 @@
     display: flex;
     gap: 25px;
     margin-bottom: 35px;
+    @include lg-block{
+      margin-right: 50px;
+      margin-bottom: 20px;
+    }
+    @include sm-block{
+      width: 100%;
+      overflow-x: auto;
+      margin-right: 0;
+    }
   }
 
   &__btn{
@@ -17,6 +26,7 @@
     text-align: center;
     padding-bottom: 12px;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
     @include tr;
 
     &:hover{

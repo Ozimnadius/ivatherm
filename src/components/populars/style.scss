@@ -3,8 +3,14 @@
   @include xlg-block{
     padding: 60px 0;
   }
+  @include lg-block{
+    padding: 40px 0;
+  }
 
   &__title{
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 }

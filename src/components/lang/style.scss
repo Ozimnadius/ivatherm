@@ -3,10 +3,12 @@
   align-items: center;
   gap: 5px;
 
+
   &__select{
     appearance: none;
     border: none;
     outline: none;
     cursor: pointer;
+    background: transparent;
   }
 }

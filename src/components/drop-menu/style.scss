@@ -38,6 +38,10 @@
     background-position: right center;
 
     grid-template-columns: 350px 1fr;
+    @include lg-block{
+      grid-template-columns: 320px 1fr;
+      background-image: none;
+    }
 
     &:before {
       content: '';
@@ -48,10 +52,17 @@
       right: 0;
       height: 30px;
     }
+
+    &.active{
+      display:grid;
+    }
   }
 
   &__list {
     padding: 40px 30px 40px 40px;
+    @include lg-block{
+      padding: 24px;
+    }
   }
 
   &__item {
@@ -100,6 +111,14 @@
     bottom: 0;
     padding: 40px;
     padding-left: 0;
+    @include lg-block{
+      left: 320px;
+      padding: 24px;
+
+      background-image: url(/images/content/drop-menu/pattern.svg);
+      background-repeat: no-repeat;
+      background-position: 70px center;
+    }
 
     &:before {
       content: '';
@@ -119,6 +138,9 @@
     grid-gap: 20px;
     @include xlg-block {
       grid-template-columns: 560px;
+    }
+    @include lg-block{
+        grid-template-columns: 100%;
     }
   }
 

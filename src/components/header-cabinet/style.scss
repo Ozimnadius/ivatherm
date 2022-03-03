@@ -14,6 +14,9 @@
     gap: 5px;
     position: relative;
     @include tr;
+    @include sm-block{
+      display: none;
+    }
 
     &:hover{
       color: var(--primary-light);
@@ -25,12 +28,21 @@
       }
     }
 
+    span{
+      @include sm-block{
+        display: none;
+      }
+    }
+
     &--enter{
       padding-right: 25px;
       @include lg-block{
         padding: 0;
         width: 100%;
         justify-content: flex-end;
+      }
+      @include sm-block{
+        display: flex;
       }
     }
 
