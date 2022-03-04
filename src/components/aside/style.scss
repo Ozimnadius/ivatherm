@@ -5,5 +5,50 @@
 
   &__callback-btn{
     gap: 15px;
+    width: 100%;
+  }
+
+  &__filter{
+    @include xlg-block{
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      width: 320px;
+      padding: 20px 15px;
+      border: 8px solid var(--white);
+      background-color: var(--grey-light);
+
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 3px;                /* ширина scrollbar */
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--grey);        /* цвет дорожки */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(#000,.3);    /* цвет плашки */
+        border-radius: 20px;       /* закругления плашки */
+        //border: 3px solid orange;  /* padding вокруг плашки */
+      }
+
+    }
+    @include sm-block{
+      width: 100%;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+    @include tr;
+
+    &.active{
+      left: 0;
+    }
   }
 }

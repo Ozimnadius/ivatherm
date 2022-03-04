@@ -96,9 +96,11 @@ window.addEventListener("load", function () {
             settings.slidesPerView = 'auto';
             settings.breakpoints = {
                 767.98: {
-                    spaceBetween: 20
+                    spaceBetween: 20,
+                    slidesPerView: 'auto'
                 },
                 1279.98: {
+                    spaceBetween: 20,
                     slidesPerView: 'auto'
                 }
             }
@@ -120,15 +122,15 @@ window.addEventListener("load", function () {
             nextEl: '.news__next',
             prevEl: '.news__prev',
         },
+        pagination: {
+            el: '.news__pag',
+        },
         breakpoints: {
             767.98: {
                 slidesPerView: 2
             },
             1279.98: {
                 slidesPerView: 3,
-                pagination: {
-                    el: '.news__pag',
-                },
             }
         }
     });
@@ -136,7 +138,10 @@ window.addEventListener("load", function () {
 //catalog
 (function () {
     $(".catalog__count").selectize({});
+
 }());
+
+
 //catalog-menu
 (function () {
     if (document.querySelector('.catalog-menu')) {
@@ -157,17 +162,33 @@ window.addEventListener("load", function () {
     $('.filter').on('change', function (e) {
         e.preventDefault();
 
-        $('.filter__submit').css('top',e.target.offsetTop+'px').addClass('active');
+        $('.filter__submit').css('top', e.target.offsetTop + 'px').addClass('active');
     });
 
     $('.filter__btn').on('click', function (e) {
 
-        $('.filter__blocks').slideToggle(300);
-
-        this.classList.toggle('active');
+        if (window.matchMedia("(min-width: 1920px)").matches) {
+            $('.filter__blocks').slideToggle(300);
+            this.classList.toggle('active');
+        } else {
+            $('.aside__filter').removeClass('active');
+        }
 
     });
 }());
+
+if (document.querySelector('.filter')) {
+    window.addEventListener('click', function (e) {
+        let target = e.target,
+            filter = document.querySelector('.aside__filter');
+
+        if (target.closest('.catalog__filter-btn')) {
+            filter.classList.add('active');
+        } else if (!target.closest('.aside__filter')) {
+            filter.classList.remove('active');
+        }
+    });
+}
 //range
 window.addEventListener('load', function () {
 
@@ -241,11 +262,16 @@ window.addEventListener('load', function () {
 (function () {
 
     let swiperProductThumbs = new Swiper(".product__thumbs", {
-        direction: 'vertical',
+        direction: 'horizontal',
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         freeMode: true,
         watchSlidesProgress: true,
+        breakpoints: {
+            767.98: {
+                direction: 'vertical',
+            },
+        }
     });
 
     let swiperProductGallery = new Swiper(".product__swiper", {
@@ -301,18 +327,19 @@ window.addEventListener('load', function () {
     }
 }());
 
-window.addEventListener('click', function (e){
-   let target = e.target,
-       drop = document.querySelector('.drop-menu__drop');
+if (media.tablet.matches) {
+    window.addEventListener('click', function (e) {
+        let target = e.target,
+            drop = document.querySelector('.drop-menu__drop');
 
-   if (target.closest('.drop-menu__btn')){
-       console.log(e);
-       e.preventDefault();
-       drop.classList.add('active');
-   } else{
-       drop.classList.remove('active');
-   }
-});
+        if (target.closest('.drop-menu__btn')) {
+            e.preventDefault();
+            drop.classList.add('active');
+        } else {
+            drop.classList.remove('active');
+        }
+    });
+}
 
 window.addEventListener('load', function () {
     new Mmenu();
@@ -397,4 +424,18 @@ class Mmenu {
         }
     }
 }
+(function () {
+    if (media.mobile.matches) {
+        document.querySelectorAll('.footer__title--arr').forEach(function (i) {
+            i.addEventListener('click', function (e) {
+                let $this = $(this),
+                    list = $this.next();
+
+                list.slideToggle(300);
+                $this.toggleClass('active');
+
+            });
+        });
+    }
+}());
 //# sourceMappingURL=script.js.map

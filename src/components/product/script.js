@@ -2,11 +2,16 @@
 (function () {
 
     let swiperProductThumbs = new Swiper(".product__thumbs", {
-        direction: 'vertical',
+        direction: 'horizontal',
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         freeMode: true,
         watchSlidesProgress: true,
+        breakpoints: {
+            767.98: {
+                direction: 'vertical',
+            },
+        }
     });
 
     let swiperProductGallery = new Swiper(".product__swiper", {

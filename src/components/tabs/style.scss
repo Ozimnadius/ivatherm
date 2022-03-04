@@ -16,6 +16,12 @@
       width: 100%;
       overflow-x: auto;
       margin-right: 0;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      padding-bottom: 0;
     }
   }
 
@@ -58,6 +64,12 @@
       position: relative;
       opacity: 1;
       pointer-events: all;
+    }
+  }
+
+  .slider__nav{
+    @include sm-block{
+      display: flex;
     }
   }
 }

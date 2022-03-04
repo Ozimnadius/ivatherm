@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: 1fr 560px;
   gap: 20px;
+  @include xlg-block{
+      grid-template-columns: 100%;
+  }
 
   &__city {
     color: #84849a;
@@ -32,6 +35,7 @@
 
   &__dep {
     color: var(--primary);
+    font-size: 16px;
   }
 
   &__contact {
@@ -97,6 +101,12 @@
   &__map {
     border: 8px solid var(--grey-light);
     position: relative;
+    @include xlg-block{
+      width: 560px;
+    }
+    @include sm-block{
+      width: 100%;
+    }
 
     &:before {
       content: '';

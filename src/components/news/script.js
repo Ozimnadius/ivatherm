@@ -10,15 +10,15 @@
             nextEl: '.news__next',
             prevEl: '.news__prev',
         },
+        pagination: {
+            el: '.news__pag',
+        },
         breakpoints: {
             767.98: {
                 slidesPerView: 2
             },
             1279.98: {
                 slidesPerView: 3,
-                pagination: {
-                    el: '.news__pag',
-                },
             }
         }
     });

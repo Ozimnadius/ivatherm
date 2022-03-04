@@ -1,5 +1,10 @@
 .catalog
     .catalog__top
+        button(type='button').catalog__filter-btn
+            span Фильтр
+            <svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.9573 7.2848C17.0377 7.47893 17.0046 7.64465 16.858 7.78196L13.3617 11.2834V16.5533C13.3617 16.7521 13.2695 16.8918 13.0851 16.9723C13.0236 16.996 12.9645 17.0078 12.9078 17.0078C12.7801 17.0078 12.6737 16.9628 12.5886 16.8729L10.7731 15.0547C10.6833 14.9647 10.6383 14.8582 10.6383 14.7351V11.2834L7.14199 7.78196C6.99542 7.64465 6.96232 7.47893 7.0427 7.2848C7.12308 7.10014 7.26255 7.00781 7.46113 7.00781H16.5389C16.7374 7.00781 16.8769 7.10014 16.9573 7.2848Z"/>
+            </svg>
         .catalog__sort
             include ../../components/sort/index
     .catalog__content
@@ -204,8 +209,81 @@
                         price: '2200',
                         icon: '/images/content/items/icon1.svg',
                     },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
 
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '-35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
 
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '-35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
+                    {
+                        sticks: [
+                            {
+                                cls: 'item__stick--hit',
+                                title: 'Хит'
+                            },
+                            {
+                                cls: 'item__stick--discount',
+                                title: 'Скидка'
+                            },
+
+                        ],
+                        labels: [
+                            "Средство для чистки лица и тела",
+                            "Для очень сухой и атопичной кожи"
+                        ],
+                        img: '/images/content/items/1.jpg',
+                        discount: '-35%',
+                        title: 'Sunlight Kids very high sun protection milk SPF50+ 200ml',
+                        rating: {
+                            stars: 5,
+                        },
+                        price: '2200',
+                        icon: '/images/content/items/icon1.svg',
+                    },
                 ];
             each i in arr
                 .catalog__item

@@ -82,7 +82,7 @@
     z-index: 2;
     bottom: 24px;
     left: 24px;
-    @include lg-block{
+    @include xlg-block{
       font-size: 24px;
     }
     @include sm-block{

@@ -14,17 +14,36 @@
   padding-right: 400px;
 
   color: var(--white);
+  @include lg-block{
+    padding-left: 50px;
+    padding-right: 300px;
+  }
+  @include sm-block{
+    padding: 20px 30px;
+    height: 293px;
+    justify-content: flex-start;
+    gap: 35px;
+  }
 
   &__img{
     position: absolute;
     z-index: 1;
     right: 0;
     bottom: 0;
+    @include sm-block{
+      width: 176px;
+    }
   }
 
   &__title{
     font-size: 28px;
     font-weight: 900;
+    @include lg-block{
+      font-size: 28px;
+    }
+    @include sm-block{
+      font-size: 24px;
+    }
   }
 
   &__txt{
@@ -32,6 +51,10 @@
     font-weight: 500;
     border-left: 3px solid var(--white);
     padding-left: 12px;
+    font-size: 16px;
+    @include sm-block{
+      font-size: 14px;
+    }
   }
 
 }

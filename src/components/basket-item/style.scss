@@ -1,4 +1,4 @@
-.basket-item{
+.basket-item {
   border: 1px solid var(--grey-light);
   padding: 30px 90px 30px 24px;
   position: relative;
@@ -6,91 +6,135 @@
   display: flex;
   justify-content: space-between;
 
-  &__del{
-    position: absolute;
-    top: 30px;
-    right: 45px;
+  @include xlg-block {
+    padding-right: 70px;
   }
-
-  &__left{
-    width: 440px;
-    display: flex;
+  @include sm-block {
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 10px 25px 10px;
     gap: 20px;
   }
 
-  &__img{
+
+  &__del {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    @include xlg-block {
+      right: 25px;
+    }
+    @include sm-block{
+      right: initial;
+      left: 50%;
+      transform: translateY(-50%);
+      top: 24px;
+    }
+
+    svg{
+      display: block;
+    }
+  }
+
+  &__left {
+    width: 440px;
+    display: flex;
+    gap: 20px;
+    @include lg-block {
+      width: 310px;
+    }
+    @include sm-block {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__img {
     width: 80px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm-block{
+      width: 115px;
+      height: 115px;
+    }
 
-    img{
+    img {
+      max-height: 100%;
       display: block;
     }
   }
 
-  &__content{
+  &__content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include sm-block{
+        align-items: center;
+    }
   }
 
-  &__sticks{
+  &__sticks {
     grid-area: sticks;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  &__stick{
+  &__stick {
     font-size: 14px;
     font-weight: 500;
     padding: 4px 15px;
 
-    &--new{
+    &--new {
       background-color: var(--grey-light);
       color: var(--primary);
     }
 
-    &--hit{
+    &--hit {
       color: var(--grey);
       background-color: var(--primary-light);
     }
 
-    &--discount{
+    &--discount {
       color: var(--white);
       background-color: #ea0429;
     }
   }
 
-  &__title{
+  &__title {
     grid-area: title;
     font-size: 14px;
+    @include sm-block{
+      text-align: center;
+    }
   }
 
-  &__discount{
+  &__discount {
     grid-area: discount;
     font-size: 14px;
-    b{
+
+    b {
       font-weight: 500;
       color: #ea0429;
     }
   }
 
-  &__sums{
+  &__sums {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
 
-  &__sum{
+  &__sum {
     font-size: 18px;
     font-weight: 700;
   }
 
-  &__oldsum{
+  &__oldsum {
     font-size: 14px;
     text-decoration: line-through;
   }

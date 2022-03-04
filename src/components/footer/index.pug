@@ -77,7 +77,11 @@ footer.footer
                 include ../../components/subscribe/index
             .footer__cols
                 .footer__col
-                    .footer__title Обслуживание
+                    .footer__title.footer__title--arr
+                        span Обслуживание
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.74609 6.00403L15.2537 12.279L8.74609 18.004" stroke="white" stroke-linecap="round"/>
+                        </svg>
                     .footer__list
                         -
                             var arr = [
@@ -90,7 +94,11 @@ footer.footer
                         each i in arr
                             a(href="#").footer__item= i
                 .footer__col
-                    .footer__title О нас
+                    .footer__title.footer__title--arr
+                        span О нас
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.74609 6.00403L15.2537 12.279L8.74609 18.004" stroke="white" stroke-linecap="round"/>
+                        </svg>
                     .footer__list
                         -
                             var arr = [
@@ -103,7 +111,8 @@ footer.footer
                         each i in arr
                             a(href="#").footer__item= i
                 .footer__col
-                    .footer__title Адрес
+                    .footer__title
+                        span Адрес
                     .footer__addr
                         |г. Москва
                         br

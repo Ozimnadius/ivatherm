@@ -23,6 +23,9 @@
       content: '';
       display: block;
       padding-top: calc(300/464*100%);
+      @include sm-block{
+        padding-top: calc(240/288*100%);
+      }
     }
 
     &:after{

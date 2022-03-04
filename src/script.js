@@ -18,4 +18,5 @@
 // @prepros-append components/basket/script.js
 // @prepros-append components/drop-menu/script.js
 // @prepros-append components/mmenu/script.js
+// @prepros-append components/footer/script.js
 

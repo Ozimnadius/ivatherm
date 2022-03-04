@@ -159,9 +159,11 @@
     align-items: center;
     @include sm-block {
       height: 160px;
+      justify-content: center;
     }
 
     img {
+      max-height: 100%;
       display: block;
     }
   }
@@ -207,6 +209,10 @@
     height: 139px;
     @include sm-block {
       padding: 20px 10px 10px;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: auto;
+      gap: 10px;
     }
   }
 
@@ -218,6 +224,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
+      height: 52px;
     }
   }
 
@@ -229,13 +236,13 @@
 
     display: flex;
     align-items: center;
-    @include sm-block{
+    @include sm-block {
       font-size: 16px;
     }
 
     svg {
       fill: currentColor;
-      @include sm-block{
+      @include sm-block {
         width: 18px;
         height: 18px;
       }
@@ -244,7 +251,7 @@
     &--old {
       font-size: 16px;
       color: var(--black) !important;
-      @include sm-block{
+      @include sm-block {
         font-size: 13px;
       }
 
@@ -270,6 +277,9 @@
     align-items: flex-end;
     background-color: var(--primary);
     border-radius: 0px 0px 5px 5px;
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__btns {
@@ -282,21 +292,31 @@
     display: none;
     flex-direction: column;
     gap: 10px;
+    @include sm-block {
+      position: static;
+      display: flex;
+    }
   }
 
   &__btn {
     width: 100%;
 
-    @include sm-block{
+    @include sm-block {
       font-size: 14px;
       height: 40px;
       line-height: 1.28;
     }
 
-    svg{
-      @include sm-block{
+    svg {
+      @include sm-block {
         display: none;
       }
+    }
+  }
+
+  &__fast{
+    @include sm-block{
+      display: none;
     }
   }
 

@@ -26,9 +26,11 @@
             settings.slidesPerView = 'auto';
             settings.breakpoints = {
                 767.98: {
-                    spaceBetween: 20
+                    spaceBetween: 20,
+                    slidesPerView: 'auto'
                 },
                 1279.98: {
+                    spaceBetween: 20,
                     slidesPerView: 'auto'
                 }
             }

@@ -8,6 +8,10 @@
   @include lg-block{
     height: 301px;
   }
+  @include sm-block{
+    height: auto;
+    padding-top: 70px;
+  }
 
   .container{
     width: 100%;
@@ -16,6 +20,9 @@
     }
     @include lg-block{
       padding-left: 70px;
+    }
+    @include sm-block{
+      padding-left: 15px;
     }
   }
 
@@ -27,6 +34,10 @@
       font-size: 20px;
       margin-bottom: 20px;
     }
+    @include sm-block{
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
   }
 
   &__txt{
@@ -36,6 +47,23 @@
     @include lg-block{
       font-size: 14px;
       margin-bottom: 30px;
+    }
+    @include sm-block{
+      font-size: 16px;
+    }
+  }
+
+  &__link{
+    width: calc(100% + 30px);
+    margin: 0 -15px;
+    background-color: var(--primary-light);
+    color: var(--white);
+    border-color: var(--primary-light);
+
+    &:hover{
+      background-color: var(--primary-light);
+      color: var(--white);
+      border-color: var(--primary-light);
     }
   }
 }
