@@ -20,10 +20,10 @@ class Mmenu {
         this.btnNav = document.querySelector(this.selectorOpenNav);
         this.nav = document.querySelector(this.selectorNav);
 
-        this.#events();
+        this.events();
     }
 
-    #events() {
+    events() {
         this.btn.addEventListener('click', this.click);
         this.btnNav.addEventListener('click',this.clickNav);
     }

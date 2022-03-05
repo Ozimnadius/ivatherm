@@ -54,11 +54,15 @@
   }
 
   &__link{
-    width: calc(100% + 30px);
-    margin: 0 -15px;
+
     background-color: var(--primary-light);
     color: var(--white);
     border-color: var(--primary-light);
+
+    @include sm-block{
+      width: calc(100% + 30px);
+      margin: 0 -15px;
+    }
 
     &:hover{
       background-color: var(--primary-light);
